@@ -5,6 +5,9 @@ import './Register.css';
 const Register = () => {
   const handleRegister = event => {
     event.preventDefault();
+    console.log(`email:${event.target.email.value}`);
+    console.log(`name: ${event.target.name.value}`);
+    console.log(`password: ${event.target.password.value}`)
   }
   return (
     <div className='register-form mt-5'>
