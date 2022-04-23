@@ -6,6 +6,8 @@ import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet-async';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const Login = () => {
 
@@ -66,6 +68,8 @@ const Login = () => {
 
   return (
     <div className='w-50 mx-auto mt-5'>
+
+      <PageTitle title="Login" />
       <h4 style={{ textAlign: 'center', fontWeight: '700', color: 'blue' }}>Please Login</h4>
 
       <Form onSubmit={handleLogin}>
