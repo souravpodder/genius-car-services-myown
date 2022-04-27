@@ -3,13 +3,13 @@ import { useAuthState, useSendEmailVerification } from 'react-firebase-hooks/aut
 import { Navigate, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const RequireAuth = ({ children }) => {
   const [user, loading] = useAuthState(auth);
   const [sendEmailVerification, sending, error] = useSendEmailVerification(auth);
   const location = useLocation();
-  console.log('user from require auth', user);
+  // console.log('user from require auth', user);
 
   if (loading) {
     return <Loading />
@@ -31,7 +31,7 @@ const RequireAuth = ({ children }) => {
             toast('Sent email');
           }}
         >Send Email Again</button>
-        <ToastContainer />
+
       </>
 
     );
